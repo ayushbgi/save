@@ -10,7 +10,7 @@
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         var element = document.getElementById('text');
         if (isMobile) {
-             
+            if ('serviceWorker' in navigator) {
         window.addEventListener('load', ()=> {
             navigator
             .serviceWorker
@@ -18,7 +18,7 @@
             .then(()=>console.log("Ready."))
             .catch(()=>console.log("Err..."));
         });
-    
+    }
         } else {
             //for desktop
         }
