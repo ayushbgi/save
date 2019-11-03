@@ -8,11 +8,11 @@
 <script>
 
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        var element = document.getElementById('text');
-        if (isMobile) {
-            if ('serviceWorker' in navigator) {
-        window.addEventListener('load', ()=> {
-            navigator
+    if (isMobile)
+    {
+        if ('serviceWorker' in navigator)
+        {
+            window.addEventListener('load', ()=> {navigator
             .serviceWorker
             .register('my.js')
             .then(()=>console.log("Ready."))
@@ -22,8 +22,6 @@
         } else {
             //for desktop
         }
-
-
    
 </script>
 </html>
