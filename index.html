@@ -6,7 +6,11 @@
     <h1>Test</h1>
 </body>
 <script>
-    if ('serviceWorker' in navigator) {
+
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var element = document.getElementById('text');
+        if (isMobile) {
+            if ('serviceWorker' in navigator) {
         window.addEventListener('load', ()=> {
             navigator
             .serviceWorker
@@ -15,5 +19,11 @@
             .catch(()=>console.log("Err..."));
         });
     }
+        } else {
+            //for desktop
+        }
+
+
+   
 </script>
 </html>
